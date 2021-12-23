@@ -17,7 +17,9 @@
         const responseText = document.getElementById('response-output')
 
         fetchBtn.addEventListener('click', () => {
-          responseText.innerText = 'Static Text Replacement'
+          const response = await fetch('/.netlify/functions/helloWorld').then(response => response.json())
+
+          responseText.innerText = (response)
         })
       })
     </script>
